@@ -1,0 +1,82 @@
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 1px solid #ccc; 
+}
+
+/* Left Side: Social Media and Copyright */
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px; /* Space between icons */
+    margin-bottom: 10px; /* Space below the icons */
+}
+
+.social-icon {
+    font-size: 24px; /* Icon size */
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.social-icon:hover {
+    color: #ddd; /* Change icon color on hover */
+}
+
+.footer-left p {
+    margin: 0; /* Remove default margin */
+    font-size: 14px; /* Font size for copyright */
+}
+
+/* Right Side: Contact Information */
+.footer-right {
+    text-align: right; /* Align text to the right */
+}
+
+.footer-right p {
+    margin: 0; /* Remove default margin */
+    font-size: 16px; /* Larger font size */
+    font-weight: bold; /* Bold text */
+}
+
+.footer-right a {
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer-right a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Light Mode Styles */
+body:not(.dark-mode) .footer-container {
+    border-top: 1px solid #ddd; /* Light border for light mode */
+}
+
+body:not(.dark-mode) .social-icon {
+    color: #000; /* Dark color for light mode */
+}
+
+body:not(.dark-mode) .footer-right {
+    color: #000; /* Dark text color for light mode */
+}
+
+/* Dark Mode Styles */
+body.dark-mode .footer-container {
+    border-top: 1px solid #444; /* Darker border for dark mode */
+}
+
+body.dark-mode .social-icon {
+    color: #fff; /* Light color for dark mode */
+}
+
+body.dark-mode .footer-right {
+    color: #fff; /* Light text color for dark mode */
+}

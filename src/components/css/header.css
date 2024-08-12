@@ -1,6 +1,5 @@
-
-*{
-    margin: auto;
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -12,22 +11,25 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
+    background-color: inherit; /* Ensure the background is inherited */
 }
 
 .logo {
     margin-left: 1px;
-    font-size: 24px;
+    font-size: 36px; /* Increase font size for better visibility */
     font-weight: bold;
-    letter-spacing: 3px; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 2px; /* Adjust spacing for a more refined look */
+    font-family: 'Roboto', sans-serif; /* Apply Google Font */
     text-transform: uppercase; 
     color: inherit; 
     cursor: pointer; 
 }
+
 .header-nav {
     display: flex;
     gap: 20px;
     margin-bottom: 10px;
+    margin-right: 200px; /* Adjust as needed */
 }
 
 .nav-link {
@@ -55,7 +57,7 @@ body.dark-mode .header-nav .nav-link {
     color: #e0e0e0;
 }
 
-body.dark-mode .header-separator {
+body.dark-mode .page-separator {
     border-color: #e0e0e0;
 }
 
@@ -72,8 +74,6 @@ body .header-nav .nav-link {
     color: #000000;
 }
 
-body .header-separator {
-    border-color: #000000; 
+body .page-separator {
+    border-color: #000000;
 }
-
-
