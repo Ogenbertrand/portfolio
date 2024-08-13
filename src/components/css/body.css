@@ -2,18 +2,17 @@
 
 .body-container {
     background-image: url('./back.png');
-    background-size: cover; 
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
-    min-height: 50vh;
     width: 100vw;
-    padding-top: 10px;
+    height: 40vh; 
     color: #ffffff;
     overflow: hidden;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between; /* Distribute space between the boxes */
+    align-items: flex-end; /* Align items to the bottom */
     filter: brightness(70%);
     animation: backgroundMove 30s linear infinite;
 }
@@ -31,27 +30,58 @@
 }
 
 .extra-wide-container {
-    width: 2000px;
-    height: 500px;
-    background-size: 100% 100%;
     position: relative;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-end;
+    width: 100%; /* Ensure it spans the full width */
 }
 
+/* Centered text on the left side */
 .centered-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-size: 8rem;
-    text-align: center;
     color: white;
-    text-transform: uppercase;
     font-weight: 900;
     font-family: 'Roboto', sans-serif;
-    line-height: 0.9; 
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
+    text-align: left; /* Align text to the left */
+    line-height: 1;
+    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8),
+                 -3px -3px 8px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    animation: slideIn 2s ease-out forwards;
+    transform: translateX(-100%);
+    margin-left: 2rem; /* Space from the left edge */
+    z-index: 1; /* Ensure it is above other content */
 }
 
 .centered-text span {
     display: block;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.centered-text span:hover {
+    transform: scale(1.1);
+    color: whitesmoke;
+}
+
+.centered-text {
+    transform: skewY(-6deg);
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0); 
+    }
+}
+
+.separator-line {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #000;
+    margin: 0;
+    padding: 0;
 }

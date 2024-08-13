@@ -23,6 +23,12 @@
     text-transform: uppercase; 
     color: inherit; 
     cursor: pointer; 
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.logo:hover {
+    color: #ff0000; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
 .header-nav {
@@ -35,6 +41,13 @@
 .nav-link {
     text-decoration: none;
     font-size: 16px;
+    color: inherit; /* Ensure the color inherits from parent */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.nav-link:hover {
+    color: #ff0000; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
 .theme-toggle {
@@ -44,6 +57,7 @@
     font-size: 20px;
 }
 
+/* Dark mode styles */
 body.dark-mode {
     background-color: #121212;
     color: #e0e0e0;
@@ -61,6 +75,7 @@ body.dark-mode .page-separator {
     border-color: #e0e0e0;
 }
 
+/* Light mode styles */
 body {
     background-color: #ffffff;
     color: #000000;

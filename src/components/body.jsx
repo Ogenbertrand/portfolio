@@ -1,4 +1,5 @@
 import './css/body.css';
+import pic from './css/pic.png'; // Import the logo image
 
 export default function Body() {
     return (
@@ -8,8 +9,6 @@ export default function Body() {
                     <h1 className="centered-text">
                         <span>SOFTWARE</span>
                         <span>ENGINEER</span>
-                        <span>BY</span>
-                        <span>PROFESSION</span>
                     </h1>
                 </div>
             </div>
