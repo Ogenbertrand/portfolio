@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
 .body-container {
     background-image: url('./back.png');
@@ -7,7 +7,7 @@
     background-position: center center;
     background-attachment: fixed;
     width: 100vw;
-    height: 40vh; 
+    height: 70vh; 
     color: #ffffff;
     overflow: hidden;
     display: flex;
@@ -15,6 +15,7 @@
     align-items: flex-end; /* Align items to the bottom */
     filter: brightness(70%);
     animation: backgroundMove 30s linear infinite;
+    position: relative; /* Ensure positioning context */
 }
 
 @keyframes backgroundMove {
@@ -78,10 +79,12 @@
     }
 }
 
-.separator-line {
-    width: 100%;
-    border: none;
-    border-top: 1px solid #000;
-    margin: 0;
-    padding: 0;
+/* Additional Image Styling */
+.additional-image {
+    width: 100%; /* Ensure it spans the full width */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin-top: 20px; /* Space from the content above */
 }
+
+/* Footer and other styles here... */

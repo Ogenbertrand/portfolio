@@ -1,5 +1,5 @@
 import './css/body.css';
-import pic from './css/pic.png'; // Import the logo image
+import pic from './css/foto.jpeg'; // Import the image
 
 export default function Body() {
     return (
@@ -12,6 +12,7 @@ export default function Body() {
                     </h1>
                 </div>
             </div>
+            <img src={pic} alt="Additional Background" className="additional-image" />
             <hr className="separator-line" />
         </div>
     );
