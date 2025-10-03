@@ -3,7 +3,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "devCommand": "npm run dev",
-  "installCommand": "npm install",
+  "installCommand": "npm install --production=false",
   "env": {
     "NODE_OPTIONS": "--max_old_space_size=4096"
   },
