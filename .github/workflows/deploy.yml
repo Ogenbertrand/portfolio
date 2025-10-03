@@ -136,13 +136,13 @@ jobs:
       - name: Notify on success
         if: needs.deploy.result == 'success'
         run: |
-          echo "🎉 Deployment successful!"
-          echo "✅ Tests passed"
-          echo "✅ Build completed"
-          echo "✅ Deployed to production"
+          echo "Deployment successful!"
+          echo "Tests passed"
+          echo "Build completed"
+          echo "Deployed to production"
           
       - name: Notify on failure
         if: needs.deploy.result == 'failure'
         run: |
-          echo "❌ Deployment failed!"
+          echo "Deployment failed!"
           echo "Please check the logs for more information."

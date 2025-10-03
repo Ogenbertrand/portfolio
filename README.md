@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS, showcasing professional skills, projects, and experience.
 
-## 🚀 Features
+## Features
 
 - **Modern Tech Stack**: React 18, TypeScript, Vite, Tailwind CSS
 - **Smooth Animations**: Framer Motion for engaging interactions
@@ -15,7 +15,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - **Experience Timeline**: Professional journey with achievements
 - **Performance**: Optimized build with code splitting and lazy loading
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Frontend
 - **React 18** - UI library
@@ -36,7 +36,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - **Docker** - Containerization
 - **Nginx** - Production web server
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ├── src/
@@ -83,7 +83,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 └── README.md
 ```
 
-## 🚦 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js 18+ 
@@ -118,7 +118,7 @@ npm run dev
 - `npm run lint` - Run ESLint
 - `npm test` - Run tests
 
-## 🐳 Docker Deployment
+## Docker Deployment
 
 ### Build Docker Image
 
@@ -146,7 +146,7 @@ services:
     restart: unless-stopped
 ```
 
-## 🚀 Deployment
+## Deployment
 
 ### Vercel (Recommended)
 
@@ -163,7 +163,7 @@ npm run build
 
 2. Deploy the `dist` folder to your hosting provider
 
-## 📊 Performance
+## Performance
 
 - **Lighthouse Score**: 95+ across all categories
 - **First Contentful Paint**: < 1.5s
@@ -171,7 +171,7 @@ npm run build
 - **Cumulative Layout Shift**: < 0.1
 - **First Input Delay**: < 100ms
 
-## 🔧 Configuration
+## Configuration
 
 ### Environment Variables
 
@@ -190,7 +190,7 @@ VITE_LINKEDIN_PROFILE=your-linkedin-url
 - **Styling**: Edit `src/index.css`
 - **Animations**: Adjust Framer Motion configurations
 
-## 📱 Responsive Design
+## Responsive Design
 
 The portfolio is fully responsive and optimized for:
 - Desktop (1920px+)
@@ -198,7 +198,7 @@ The portfolio is fully responsive and optimized for:
 - Tablet (768px - 1023px)
 - Mobile (320px - 767px)
 
-## 🎯 SEO Optimization
+## SEO Optimization
 
 - Meta tags for social media sharing
 - Structured data markup
@@ -207,7 +207,7 @@ The portfolio is fully responsive and optimized for:
 - Fast loading times
 - Mobile-friendly design
 
-## 🔒 Security
+## Security
 
 - Content Security Policy headers
 - XSS protection
@@ -215,7 +215,7 @@ The portfolio is fully responsive and optimized for:
 - Input validation and sanitization
 - Secure headers configuration
 
-## 📈 Analytics
+## Analytics
 
 Add your analytics tracking ID to monitor:
 - Page views
@@ -223,7 +223,7 @@ Add your analytics tracking ID to monitor:
 - Performance metrics
 - Conversion tracking
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -231,18 +231,18 @@ Add your analytics tracking ID to monitor:
 4. Run tests and linting
 5. Submit a pull request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Design inspiration from modern portfolio websites
 - Icons from React Icons library
 - Fonts from Google Fonts
 - Images generated with AI tools
 
-## 📞 Contact
+## Contact
 
 - **Email**: ogenbertrand@gmail.com
 - **LinkedIn**: [bertrand-ogen-2a9108264](https://linkedin.com/in/bertrand-ogen-2a9108264)
@@ -251,4 +251,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Built with ❤️ by Bertrand Ogen**
+**Built by Bertrand Ogen**
