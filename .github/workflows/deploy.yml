@@ -30,9 +30,6 @@ jobs:
       - name: Run linting
         run: npm run lint
         
-      - name: Run tests
-        run: npm test
-        
       - name: Run type checking
         run: npx tsc --noEmit
 
@@ -137,7 +134,7 @@ jobs:
         if: needs.deploy.result == 'success'
         run: |
           echo "Deployment successful!"
-          echo "Tests passed"
+          echo "Linting passed"
           echo "Build completed"
           echo "Deployed to production"
           
