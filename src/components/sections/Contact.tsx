@@ -56,8 +56,8 @@ const Contact = () => {
     {
       icon: FiPhone,
       label: 'Phone',
-      value: '+237 6XX XXX XXX',
-      href: 'tel:+2376XXXXXXX',
+      value: '+237 654 860 329',
+      href: 'tel:+237654860329',
       color: 'hover:text-green-500'
     },
     {
