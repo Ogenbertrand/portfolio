@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import type { ReactNode } from 'react'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Header from './components/layout/Header'
 import Hero from './components/sections/Hero'
 import About from './components/sections/About'
@@ -9,6 +11,12 @@ import Experience from './components/sections/Experience'
 import Contact from './components/sections/Contact'
 import Footer from './components/layout/Footer'
 import './App.css'
+
+const SectionPage = ({ children }: { children: ReactNode }) => (
+  <div className="pt-16">
+    {children}
+  </div>
+)
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -29,12 +37,50 @@ function App() {
           >
             <Header />
             <main>
-              <Hero />
-              <About />
-              <Skills />
-              <Projects />
-              <Experience />
-              <Contact />
+              <Routes>
+                <Route path="/" element={<Hero />} />
+                <Route
+                  path="/about"
+                  element={(
+                    <SectionPage>
+                      <About />
+                    </SectionPage>
+                  )}
+                />
+                <Route
+                  path="/skills"
+                  element={(
+                    <SectionPage>
+                      <Skills />
+                    </SectionPage>
+                  )}
+                />
+                <Route
+                  path="/projects"
+                  element={(
+                    <SectionPage>
+                      <Projects />
+                    </SectionPage>
+                  )}
+                />
+                <Route
+                  path="/experience"
+                  element={(
+                    <SectionPage>
+                      <Experience />
+                    </SectionPage>
+                  )}
+                />
+                <Route
+                  path="/contact"
+                  element={(
+                    <SectionPage>
+                      <Contact />
+                    </SectionPage>
+                  )}
+                />
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
             </main>
             <Footer />
           </motion.div>
