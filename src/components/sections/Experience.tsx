@@ -1,23 +1,25 @@
 import { motion } from 'framer-motion'
-import { FiBriefcase, FiAward, FiBook, FiCode } from 'react-icons/fi'
+import { FaBriefcase, FaAward, FaBook, FaCode } from 'react-icons/fa'
 import { experiences } from '../../data/experience'
 
 const Experience = () => {
   const getIcon = (type: string) => {
     const icons = {
-      'work': FiBriefcase,
-      'opensource': FiCode,
-      'education': FiBook
+      work: FaBriefcase,
+      opensource: FaCode,
+      education: FaBook
     }
-    return icons[type as keyof typeof icons] || FiAward
+
+    return icons[type as keyof typeof icons] || FaAward
   }
 
   const getTypeColor = (type: string) => {
     const colors = {
-      'work': 'bg-blue-100 text-blue-800',
-      'opensource': 'bg-green-100 text-green-800',
-      'education': 'bg-purple-100 text-purple-800'
+      work: 'bg-primary-100 text-primary-800',
+      opensource: 'bg-accent-100 text-accent-800',
+      education: 'bg-secondary-100 text-secondary-800'
     }
+
     return colors[type as keyof typeof colors] || 'bg-gray-100 text-gray-800'
   }
 
@@ -46,14 +48,12 @@ const Experience = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          {/* Timeline */}
           <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-300"></div>
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-300" />
 
             {experiences.map((experience, index) => {
               const Icon = getIcon(experience.type)
-              
+
               return (
                 <motion.div
                   key={experience.id}
@@ -63,16 +63,13 @@ const Experience = () => {
                   viewport={{ once: true }}
                   className="relative mb-12"
                 >
-                  {/* Timeline Dot */}
-                  <div className="absolute left-6 w-4 h-4 bg-white border-4 border-blue-600 rounded-full z-10"></div>
-                  
-                  {/* Experience Card */}
-                  <div className="ml-16 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-8">
-                    {/* Header */}
+                  <div className="absolute left-6 w-4 h-4 bg-white border-4 border-primary-700 rounded-full z-10" />
+
+                  <div className="ml-16 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 p-8">
                     <div className="flex items-start justify-between mb-6">
                       <div className="flex items-center space-x-4">
                         <div className={`p-3 rounded-lg ${getTypeColor(experience.type)}`}>
-                          <Icon className="w-6 h-6" />
+                          <Icon className="w-5 h-5" />
                         </div>
                         <div>
                           <h3 className="text-xl font-bold text-gray-900">
@@ -81,14 +78,15 @@ const Experience = () => {
                           <p className="text-lg text-gray-700 font-medium">
                             {experience.company}
                           </p>
-                          <div className="flex items-center space-x-4 mt-2">
+                          <div className="flex flex-wrap items-center gap-3 mt-2">
                             <span className="text-sm text-gray-600">
-                              📍 {experience.location}
+                              {experience.location}
                             </span>
+                            <span className="text-sm text-gray-600">•</span>
                             <span className="text-sm text-gray-600">
-                              📅 {experience.duration}
+                              {experience.duration}
                             </span>
-                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${getTypeColor(experience.type)}`}>
+                            <span className={`px-2 py-1 rounded-full text-xs font-medium capitalize ${getTypeColor(experience.type)}`}>
                               {experience.type === 'opensource' ? 'Open Source' : experience.type}
                             </span>
                           </div>
@@ -96,19 +94,17 @@ const Experience = () => {
                       </div>
                     </div>
 
-                    {/* Description */}
                     <div className="mb-6">
                       <ul className="space-y-2">
                         {experience.description.map((desc, descIndex) => (
                           <li key={descIndex} className="flex items-start space-x-3">
-                            <span className="flex-shrink-0 w-2 h-2 bg-blue-600 rounded-full mt-2"></span>
+                            <span className="flex-shrink-0 w-2 h-2 bg-primary-700 rounded-full mt-2" />
                             <span className="text-gray-700 leading-relaxed">{desc}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    {/* Technologies */}
                     <div>
                       <h4 className="text-sm font-semibold text-gray-900 mb-3">Technologies & Skills:</h4>
                       <div className="flex flex-wrap gap-2">
@@ -129,38 +125,37 @@ const Experience = () => {
           </div>
         </div>
 
-        {/* Experience Summary */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="mt-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-8 text-white"
+          className="mt-16 bg-gradient-to-br from-primary-800 to-secondary-800 rounded-2xl p-8 text-white"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="text-4xl font-bold mb-2">
                 {experiences.filter(e => e.type === 'work').length}+
               </div>
-              <div className="text-blue-100">Years Professional Experience</div>
+              <div className="text-gray-200">Years Professional Experience</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold mb-2">
                 {experiences.filter(e => e.type === 'opensource').length}
               </div>
-              <div className="text-blue-100">Open Source Contributions</div>
+              <div className="text-gray-200">Open Source Contributions</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold mb-2">
                 {experiences.filter(e => e.type === 'education').length}
               </div>
-              <div className="text-blue-100">Educational Milestones</div>
+              <div className="text-gray-200">Educational Milestones</div>
             </div>
           </div>
-          
+
           <div className="mt-8 text-center">
-            <p className="text-lg text-blue-100 leading-relaxed">
-              My journey is characterized by continuous learning, active open-source participation, 
+            <p className="text-lg text-gray-200 leading-relaxed">
+              My journey is characterized by continuous learning, active open-source participation,
               and a commitment to delivering high-quality software solutions that make a positive impact.
             </p>
           </div>
