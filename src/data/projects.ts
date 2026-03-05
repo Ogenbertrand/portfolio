@@ -20,25 +20,6 @@ export const projects: Project[] = [
     featured: true
   },
   {
-    id: 2,
-    title: 'React Calculator',
-    description: 'A modern, responsive calculator application built with React and TypeScript, featuring advanced calculations and a clean UI.',
-    technologies: ['React', 'TypeScript', 'CSS3', 'Jest'],
-    githubUrl: 'https://github.com/Ogenbertrand/React-Calculator',
-    liveUrl: 'https://ogenbertrand.github.io/React-Calculator',
-    category: 'web',
-    featured: true
-  },
-  {
-    id: 3,
-    title: 'TrackMe Backend',
-    description: 'A Python-based backend application for tracking and monitoring systems, with real-time data processing capabilities.',
-    technologies: ['Python', 'FastAPI', 'PostgreSQL', 'Redis', 'Docker'],
-    githubUrl: 'https://github.com/Ogenbertrand/trackme-backend',
-    category: 'backend',
-    featured: false
-  },
-  {
     id: 4,
     title: 'Monitoring Tool',
     description: 'A comprehensive monitoring solution built with JavaScript, providing real-time system metrics and alerting capabilities.',
@@ -66,21 +47,21 @@ export const projects: Project[] = [
     featured: false
   },
   {
-    id: 7,
-    title: 'Docker Compose Setup',
-    description: 'Production-ready Docker Compose configuration for Spring Boot applications with monitoring and logging.',
-    technologies: ['Docker', 'Docker Compose', 'Spring Boot', 'Prometheus', 'Grafana'],
-    githubUrl: 'https://github.com/Ogenbertrand/docker-compose-spring-boot',
-    category: 'devops',
-    featured: false
-  },
-  {
     id: 8,
     title: 'Keycloak Contributions',
     description: 'Active contributor to Keycloak open-source identity and access management platform, implementing security enhancements and bug fixes.',
     technologies: ['Java', 'Keycloak', 'OAuth2', 'OIDC', 'Security'],
     githubUrl: 'https://github.com/keycloak/keycloak',
     category: 'backend',
+    featured: true
+  },
+  {
+    id: 9,
+    title: 'CodeMentor AI',
+    description: 'An LLM-powered code review tool that provides expert-level code reviews on GitHub Pull Requests with seamless VS Code integration.',
+    technologies: ['TypeScript', 'React', 'AI', 'Web App'],
+    githubUrl: 'https://github.com/Ogenbertrand/codementor-ai',
+    category: 'web',
     featured: true
   }
 ]
