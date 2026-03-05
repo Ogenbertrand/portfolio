@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
-import { FiGithub, FiLinkedin, FiMail, FiTwitter } from 'react-icons/fi'
+import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from 'react-icons/fa'
+import logo from '../../assets/logo.png'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -8,57 +9,57 @@ const Footer = () => {
     {
       name: 'GitHub',
       url: 'https://github.com/Ogenbertrand',
-      icon: FiGithub,
+      icon: FaGithub,
       color: 'hover:text-gray-900'
     },
     {
       name: 'LinkedIn',
       url: 'https://linkedin.com/in/bertrand-ogen-2a9108264',
-      icon: FiLinkedin,
-      color: 'hover:text-blue-600'
+      icon: FaLinkedin,
+      color: 'hover:text-primary-700'
     },
     {
       name: 'Twitter',
       url: 'https://twitter.com/ogenbertrand',
-      icon: FiTwitter,
-      color: 'hover:text-blue-400'
+      icon: FaTwitter,
+      color: 'hover:text-accent-600'
     },
     {
       name: 'Email',
       url: 'mailto:ogenbertrand@gmail.com',
-      icon: FiMail,
-      color: 'hover:text-red-500'
+      icon: FaEnvelope,
+      color: 'hover:text-accent-700'
     }
   ]
 
   return (
-    <footer className="bg-gray-50 border-t border-gray-200">
+    <footer className="bg-white border-t border-gray-200">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">BO</span>
-              </div>
+              <img
+                src={logo}
+                alt="Bertrand Ogen logo"
+                className="w-9 h-9 rounded-lg object-cover border border-gray-200 shadow-sm"
+              />
               <span className="font-display font-semibold text-gray-900">
                 Bertrand Ogen
               </span>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">
-              Full Stack Software Engineer & DevOps Engineer specializing in modern web technologies, 
+              Full Stack Software Engineer & DevOps Engineer specializing in modern web technologies,
               cloud infrastructure, and open-source development.
             </p>
           </div>
 
-          {/* Quick Links */}
           <div className="space-y-4">
             <h3 className="font-display font-semibold text-gray-900">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <a
                   href="#about"
-                  className="text-gray-600 hover:text-blue-600 text-sm transition-colors duration-200"
+                  className="text-gray-600 hover:text-primary-700 text-sm transition-colors duration-200"
                 >
                   About Me
                 </a>
@@ -66,7 +67,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#skills"
-                  className="text-gray-600 hover:text-blue-600 text-sm transition-colors duration-200"
+                  className="text-gray-600 hover:text-primary-700 text-sm transition-colors duration-200"
                 >
                   Skills
                 </a>
@@ -74,7 +75,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#projects"
-                  className="text-gray-600 hover:text-blue-600 text-sm transition-colors duration-200"
+                  className="text-gray-600 hover:text-primary-700 text-sm transition-colors duration-200"
                 >
                   Projects
                 </a>
@@ -82,7 +83,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#experience"
-                  className="text-gray-600 hover:text-blue-600 text-sm transition-colors duration-200"
+                  className="text-gray-600 hover:text-primary-700 text-sm transition-colors duration-200"
                 >
                   Experience
                 </a>
@@ -90,7 +91,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#contact"
-                  className="text-gray-600 hover:text-blue-600 text-sm transition-colors duration-200"
+                  className="text-gray-600 hover:text-primary-700 text-sm transition-colors duration-200"
                 >
                   Contact
                 </a>
@@ -98,7 +99,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Connect */}
           <div className="space-y-4">
             <h3 className="font-display font-semibold text-gray-900">Connect</h3>
             <div className="flex space-x-4">
@@ -112,7 +112,7 @@ const Footer = () => {
                   className={`text-gray-600 ${link.color} transition-colors duration-200`}
                   aria-label={link.name}
                 >
-                  <link.icon size={20} />
+                  <link.icon size={18} />
                 </motion.a>
               ))}
             </div>
