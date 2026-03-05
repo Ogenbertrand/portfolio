@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaBars, FaTimes, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import logo from '../../assets/logo.png'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,21 +18,18 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navItems = [
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Contact', href: '#contact' }
-  ]
-
-  const handleNavClick = (href: string) => {
+  useEffect(() => {
     setIsMenuOpen(false)
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
+  }, [location.pathname])
+
+  const navItems = [
+    { name: 'Home', to: '/' },
+    { name: 'About', to: '/about' },
+    { name: 'Skills', to: '/skills' },
+    { name: 'Projects', to: '/projects' },
+    { name: 'Experience', to: '/experience' },
+    { name: 'Contact', to: '/contact' }
+  ]
 
   return (
     <motion.header
@@ -45,32 +44,37 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           <motion.div
             whileHover={{ scale: 1.03 }}
-            className="flex items-center space-x-2"
+            className="inline-flex items-center space-x-2"
           >
-            <img
-              src={logo}
-              alt="Bertrand Ogen logo"
-              className="w-9 h-9 rounded-lg object-cover border border-gray-200 shadow-sm"
-            />
-            <span className="font-display font-semibold text-gray-900 hidden sm:block">
-              Bertrand Ogen
-            </span>
+            <Link to="/" className="inline-flex items-center space-x-2">
+              <img
+                src={logo}
+                alt="Bertrand Ogen logo"
+                className="w-9 h-9 rounded-lg object-cover border border-gray-200 shadow-sm"
+              />
+              <span className="font-display font-semibold text-gray-900 hidden sm:block">
+                Bertrand Ogen
+              </span>
+            </Link>
           </motion.div>
 
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <motion.a
+              <motion.div
                 key={item.name}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault()
-                  handleNavClick(item.href)
-                }}
                 whileHover={{ y: -2 }}
-                className="text-gray-700 hover:text-primary-700 font-medium transition-colors duration-200"
               >
-                {item.name}
-              </motion.a>
+                <NavLink
+                  to={item.to}
+                  className={({ isActive }) =>
+                    `font-medium transition-colors duration-200 ${
+                      isActive ? 'text-primary-700' : 'text-gray-700 hover:text-primary-700'
+                    }`
+                  }
+                >
+                  {item.name}
+                </NavLink>
+              </motion.div>
             ))}
           </nav>
 
@@ -125,17 +129,19 @@ const Header = () => {
             >
               <nav className="py-4 space-y-2">
                 {navItems.map((item) => (
-                  <a
+                  <NavLink
                     key={item.name}
-                    href={item.href}
-                    onClick={(e) => {
-                      e.preventDefault()
-                      handleNavClick(item.href)
-                    }}
-                    className="block px-4 py-2 text-gray-700 hover:text-primary-700 hover:bg-gray-100 rounded-lg transition-all duration-200"
+                    to={item.to}
+                    className={({ isActive }) =>
+                      `block px-4 py-2 rounded-lg transition-all duration-200 ${
+                        isActive
+                          ? 'text-primary-700 bg-primary-50'
+                          : 'text-gray-700 hover:text-primary-700 hover:bg-gray-100'
+                      }`
+                    }
                   >
                     {item.name}
-                  </a>
+                  </NavLink>
                 ))}
               </nav>
               <div className="flex items-center justify-center space-x-6 py-4 border-t border-gray-200">
