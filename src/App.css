@@ -40,12 +40,12 @@ html {
 
 /* Gradient text animation */
 .gradient-text {
-  background: linear-gradient(135deg, #5f31ba, #955ff5);
-  background-size: 200% 200%;
+  background: linear-gradient(90deg, #4f6fe9, #6a61ee, #8358ef);
+  background-size: 240% 240%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradient-shift 5s ease-in-out infinite;
+  animation: gradient-shift 4s ease-in-out infinite;
 }
 
 @keyframes gradient-shift {
