@@ -11,22 +11,22 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #ede5ff;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3b82f6;
+  background: #733fda;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2563eb;
+  background: #5f31ba;
 }
 
 /* Loading animation */
 .loading-spinner {
-  border: 3px solid #f3f3f3;
-  border-top: 3px solid #3b82f6;
+  border: 3px solid #ede5ff;
+  border-top: 3px solid #733fda;
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -40,12 +40,12 @@ html {
 
 /* Gradient text animation */
 .gradient-text {
-  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4);
-  background-size: 300% 300%;
+  background: linear-gradient(135deg, #5f31ba, #955ff5);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradient-shift 3s ease-in-out infinite;
+  animation: gradient-shift 5s ease-in-out infinite;
 }
 
 @keyframes gradient-shift {
@@ -88,7 +88,7 @@ html {
 /* Section dividers */
 .section-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+  background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
   margin: 4rem 0;
 }
 
