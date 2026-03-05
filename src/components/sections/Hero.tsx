@@ -53,9 +53,10 @@ const Hero = () => {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="text-lg text-gray-600 max-w-2xl leading-relaxed"
               >
-                I build scalable web applications and contribute to open-source projects.
-                Currently working with Java, React, and TypeScript while actively contributing
-                to Keycloak identity management platform.
+              A Software and DevOps Engineer who enjoys building systems that are reliable, scalable, and meaningful.
+
+              My work spans modern software development, cloud infrastructure, and automation, and I have strong knowledge of AI technologies and AI agents. 
+              I’m always motivated by challenging problems and the opportunity to build technology that truly helps people.
               </motion.p>
             </motion.div>
 
