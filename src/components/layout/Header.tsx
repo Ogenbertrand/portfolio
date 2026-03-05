@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiMenu, FiX, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi'
+import { FaBars, FaTimes, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import logo from '../../assets/logo.png'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -37,25 +38,25 @@ const Header = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
+        isScrolled ? 'bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <motion.div
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.03 }}
             className="flex items-center space-x-2"
           >
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">BO</span>
-            </div>
+            <img
+              src={logo}
+              alt="Bertrand Ogen logo"
+              className="w-9 h-9 rounded-lg object-cover border border-gray-200 shadow-sm"
+            />
             <span className="font-display font-semibold text-gray-900 hidden sm:block">
               Bertrand Ogen
             </span>
           </motion.div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <motion.a
@@ -66,14 +67,13 @@ const Header = () => {
                   handleNavClick(item.href)
                 }}
                 whileHover={{ y: -2 }}
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-primary-700 font-medium transition-colors duration-200"
               >
                 {item.name}
               </motion.a>
             ))}
           </nav>
 
-          {/* Social Links */}
           <div className="hidden md:flex items-center space-x-4">
             <motion.a
               href="https://github.com/Ogenbertrand"
@@ -81,37 +81,39 @@ const Header = () => {
               rel="noopener noreferrer"
               whileHover={{ y: -2 }}
               className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
+              aria-label="GitHub"
             >
-              <FiGithub size={20} />
+              <FaGithub size={18} />
             </motion.a>
             <motion.a
               href="https://linkedin.com/in/bertrand-ogen-2a9108264"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ y: -2 }}
-              className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+              className="text-gray-600 hover:text-primary-700 transition-colors duration-200"
+              aria-label="LinkedIn"
             >
-              <FiLinkedin size={20} />
+              <FaLinkedin size={18} />
             </motion.a>
             <motion.a
               href="mailto:ogenbertrand@gmail.com"
               whileHover={{ y: -2 }}
-              className="text-gray-600 hover:text-red-500 transition-colors duration-200"
+              className="text-gray-600 hover:text-accent-600 transition-colors duration-200"
+              aria-label="Email"
             >
-              <FiMail size={20} />
+              <FaEnvelope size={18} />
             </motion.a>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-700 hover:text-blue-600 transition-colors duration-200"
+            className="md:hidden text-gray-700 hover:text-primary-700 transition-colors duration-200"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
           >
-            {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            {isMenuOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
@@ -130,7 +132,7 @@ const Header = () => {
                       e.preventDefault()
                       handleNavClick(item.href)
                     }}
-                    className="block px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-all duration-200"
+                    className="block px-4 py-2 text-gray-700 hover:text-primary-700 hover:bg-gray-100 rounded-lg transition-all duration-200"
                   >
                     {item.name}
                   </a>
@@ -142,22 +144,25 @@ const Header = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                  aria-label="GitHub"
                 >
-                  <FiGithub size={20} />
+                  <FaGithub size={18} />
                 </a>
                 <a
                   href="https://linkedin.com/in/bertrand-ogen-2a9108264"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                  className="text-gray-600 hover:text-primary-700 transition-colors duration-200"
+                  aria-label="LinkedIn"
                 >
-                  <FiLinkedin size={20} />
+                  <FaLinkedin size={18} />
                 </a>
                 <a
                   href="mailto:ogenbertrand@gmail.com"
-                  className="text-gray-600 hover:text-red-500 transition-colors duration-200"
+                  className="text-gray-600 hover:text-accent-600 transition-colors duration-200"
+                  aria-label="Email"
                 >
-                  <FiMail size={20} />
+                  <FaEnvelope size={18} />
                 </a>
               </div>
             </motion.div>
