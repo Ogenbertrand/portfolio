@@ -178,9 +178,9 @@ npm run build
 Create a `.env` file in the root directory:
 
 ```env
-VITE_CONTACT_EMAIL=your-email@example.com
-VITE_GITHUB_TOKEN=your-github-token
-VITE_LINKEDIN_PROFILE=your-linkedin-url
+RESEND_API_KEY=your-resend-api-key
+CONTACT_SENDER_EMAIL=Portfolio Contact <onboarding@resend.dev>
+CONTACT_RECEIVER_EMAIL=your-inbox@example.com
 ```
 
 ### Customization
