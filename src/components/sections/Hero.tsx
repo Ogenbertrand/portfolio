@@ -1,22 +1,28 @@
 import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown, FaBolt, FaRocket } from 'react-icons/fa'
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaArrowDown,
+  FaBolt,
+  FaRocket,
+  FaJava,
+  FaPython
+} from 'react-icons/fa'
+import { FaRust } from 'react-icons/fa6'
+import { SiTypescript } from 'react-icons/si'
+import { Link } from 'react-router-dom'
 import pic from '../../assets/pic.jpg'
 
 const Hero = () => {
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-    const element = document.querySelector('#about')
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
+  const MotionLink = motion(Link)
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-accent-50">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary-100 rounded-full mix-blend-multiply filter blur-xl opacity-65 animate-float" />
-        <div className="absolute top-3/4 right-1/4 w-64 h-64 bg-secondary-100 rounded-full mix-blend-multiply filter blur-xl opacity-65 animate-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-accent-100 rounded-full mix-blend-multiply filter blur-xl opacity-65 animate-float" style={{ animationDelay: '4s' }} />
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-65 animate-float" />
+        <div className="absolute top-3/4 right-1/4 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-65 animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-65 animate-float" style={{ animationDelay: '4s' }} />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -61,25 +67,25 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start"
             >
-              <motion.a
-                href="#projects"
+              <MotionLink
+                to="/projects"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-primary inline-flex items-center justify-center space-x-2"
               >
                 <span>View My Work</span>
                 <FaArrowDown size={14} />
-              </motion.a>
+              </MotionLink>
 
-              <motion.a
-                href="#contact"
+              <MotionLink
+                to="/contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-secondary inline-flex items-center justify-center space-x-2"
               >
                 <span>Get In Touch</span>
                 <FaEnvelope size={14} />
-              </motion.a>
+              </MotionLink>
             </motion.div>
 
             <motion.div
@@ -129,12 +135,34 @@ const Hero = () => {
           >
             <div className="relative">
               <div className="w-80 h-80 rounded-full bg-gradient-to-br from-primary-600 to-secondary-700 p-2">
-                <div className="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
-                  <img
-                    src={pic}
-                    alt="Bertrand Ogen portrait"
-                    className="w-full h-full object-cover"
-                  />
+                <div className="w-full h-full rounded-full bg-white border-4 border-white shadow-xl flex items-center justify-center">
+                  <div className="text-center space-y-4">
+                    <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-primary-100 shadow-md">
+                      <img
+                        src={pic}
+                        alt="Bertrand Ogen portrait"
+                        className="w-full h-full object-cover object-top"
+                      />
+                    </div>
+                    <div className="grid grid-cols-2 gap-2">
+                      <span className="inline-flex items-center justify-center gap-1.5 px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full font-medium">
+                        <FaJava className="w-3 h-3" />
+                        Java
+                      </span>
+                      <span className="inline-flex items-center justify-center gap-1.5 px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full font-medium">
+                        <FaRust className="w-3 h-3" />
+                        Rust
+                      </span>
+                      <span className="inline-flex items-center justify-center gap-1.5 px-3 py-1 bg-indigo-100 text-indigo-800 text-sm rounded-full font-medium">
+                        <SiTypescript className="w-3 h-3" />
+                        TypeScript
+                      </span>
+                      <span className="inline-flex items-center justify-center gap-1.5 px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full font-medium">
+                        <FaPython className="w-3 h-3" />
+                        Python
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -163,16 +191,15 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 1.2 }}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
-          <motion.a
-            href="#about"
-            onClick={handleScroll}
+          <MotionLink
+            to="/about"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
             className="flex flex-col items-center text-gray-600 hover:text-primary-700 transition-colors duration-200"
           >
             <span className="text-sm mb-2">Scroll to explore</span>
             <FaArrowDown size={16} />
-          </motion.a>
+          </MotionLink>
         </motion.div>
       </div>
     </section>
