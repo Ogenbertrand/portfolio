@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.png'
 
 const Footer = () => {
@@ -32,6 +33,15 @@ const Footer = () => {
     }
   ]
 
+  const quickLinks = [
+    { name: 'Home', to: '/' },
+    { name: 'About Me', to: '/about' },
+    { name: 'Skills', to: '/skills' },
+    { name: 'Projects', to: '/projects' },
+    { name: 'Experience', to: '/experience' },
+    { name: 'Contact', to: '/contact' }
+  ]
+
   return (
     <footer className="bg-white border-t border-gray-200">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -56,46 +66,16 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-display font-semibold text-gray-900">Quick Links</h3>
             <ul className="space-y-2">
-              <li>
-                <a
-                  href="#about"
-                  className="text-gray-600 hover:text-primary-700 text-sm transition-colors duration-200"
-                >
-                  About Me
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#skills"
-                  className="text-gray-600 hover:text-primary-700 text-sm transition-colors duration-200"
-                >
-                  Skills
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#projects"
-                  className="text-gray-600 hover:text-primary-700 text-sm transition-colors duration-200"
-                >
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#experience"
-                  className="text-gray-600 hover:text-primary-700 text-sm transition-colors duration-200"
-                >
-                  Experience
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="text-gray-600 hover:text-primary-700 text-sm transition-colors duration-200"
-                >
-                  Contact
-                </a>
-              </li>
+              {quickLinks.map((link) => (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    className="text-gray-600 hover:text-primary-700 text-sm transition-colors duration-200"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
