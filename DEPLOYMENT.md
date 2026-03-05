@@ -44,9 +44,9 @@ docker run -p 80:80 bertrand-portfolio
 ## Environment Variables
 
 Required for full functionality:
-- `VITE_CONTACT_EMAIL` - Contact form email
-- `VITE_GITHUB_TOKEN` - GitHub API token (optional)
-- `VITE_LINKEDIN_PROFILE` - LinkedIn profile URL
+- `RESEND_API_KEY` - Resend API key used by `/api/contact`
+- `CONTACT_SENDER_EMAIL` - Verified sender address in Resend
+- `CONTACT_RECEIVER_EMAIL` - Inbox address that receives contact form messages
 
 ## CI/CD Pipeline
 
