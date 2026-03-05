@@ -18,9 +18,21 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#f2ecff] via-[#fbf9ff] to-[#f6f1ff]">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-65 animate-float" />
-        <div className="absolute top-3/4 right-1/4 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-65 animate-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-65 animate-float" style={{ animationDelay: '4s' }} />
+        <motion.div
+          animate={{ y: [0, -18, 0], x: [0, 8, 0], scale: [1, 1.04, 1] }}
+          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+          className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-65"
+        />
+        <motion.div
+          animate={{ y: [0, 20, 0], x: [0, -10, 0], scale: [1, 0.96, 1] }}
+          transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
+          className="absolute top-3/4 right-1/4 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-65"
+        />
+        <motion.div
+          animate={{ y: [0, -14, 0], x: [0, 12, 0], scale: [1, 1.03, 1] }}
+          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1.2 }}
+          className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-65"
+        />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
