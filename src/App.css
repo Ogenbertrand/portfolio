@@ -11,22 +11,22 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #ede5ff;
+  background: #efe9f8;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #733fda;
+  background: #734ca3;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #5f31ba;
+  background: #5f3f86;
 }
 
 /* Loading animation */
 .loading-spinner {
-  border: 3px solid #ede5ff;
-  border-top: 3px solid #733fda;
+  border: 3px solid #efe9f8;
+  border-top: 3px solid #734ca3;
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -40,7 +40,7 @@ html {
 
 /* Gradient text animation */
 .gradient-text {
-  background: linear-gradient(90deg, #4f6fe9, #6a61ee, #8358ef);
+  background: linear-gradient(90deg, #5f3f86, #734ca3, #9870c3);
   background-size: 240% 240%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
