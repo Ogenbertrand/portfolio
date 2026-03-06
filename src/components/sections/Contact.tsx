@@ -103,7 +103,7 @@ const Contact = () => {
   return (
     <section id="contact" className="section bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -118,22 +118,22 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto"
           >
             Have a project in mind or want to collaborate? I&apos;d love to hear from you!
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6 sm:space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6">Get In Touch</h3>
               <p className="text-gray-600 leading-relaxed mb-8">
                 I&apos;m always open to discussing new opportunities, interesting projects, or just having a chat about technology.
                 Feel free to reach out through any of the channels below or send me a message using the form.
@@ -148,16 +148,16 @@ const Contact = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200 border border-gray-200"
+                  className="flex items-start sm:items-center space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200 border border-gray-200"
                 >
-                  <div className={`p-3 rounded-lg bg-primary-100 text-primary-700 ${info.color} transition-colors duration-200`}>
+                  <div className={`p-3 rounded-lg bg-primary-100 text-primary-700 ${info.color} transition-colors duration-200 flex-shrink-0`}>
                     <info.icon className="w-5 h-5" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <div className="font-medium text-gray-900">{info.label}</div>
                     <a
                       href={info.href}
-                      className={`text-gray-600 ${info.color} transition-colors duration-200`}
+                      className={`text-gray-600 ${info.color} transition-colors duration-200 break-all sm:break-normal`}
                     >
                       {info.value}
                     </a>
@@ -209,12 +209,12 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-gray-50 rounded-2xl p-8 border border-gray-200"
+            className="bg-gray-50 rounded-2xl p-5 sm:p-8 border border-gray-200"
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Send Me a Message</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6">Send Me a Message</h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                     Name *
