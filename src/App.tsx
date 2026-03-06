@@ -9,6 +9,7 @@ import Skills from './components/sections/Skills'
 import Projects from './components/sections/Projects'
 import Experience from './components/sections/Experience'
 import Contact from './components/sections/Contact'
+import Articles from './components/sections/Articles'
 import Footer from './components/layout/Footer'
 import './App.css'
 
@@ -76,6 +77,14 @@ function App() {
                   element={(
                     <SectionPage>
                       <Contact />
+                    </SectionPage>
+                  )}
+                />
+                <Route
+                  path="/articles"
+                  element={(
+                    <SectionPage>
+                      <Articles />
                     </SectionPage>
                   )}
                 />
