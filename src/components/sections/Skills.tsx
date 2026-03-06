@@ -70,7 +70,7 @@ const Skills = () => {
   return (
     <section id="skills" className="section bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -85,7 +85,7 @@ const Skills = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto"
           >
             A comprehensive skill set spanning frontend, backend, databases, DevOps, and modern development tools
           </motion.p>
@@ -96,13 +96,13 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-10 sm:mb-12"
         >
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setSelectedCategory(null)}
-            className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+            className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-medium transition-all duration-300 ${
               selectedCategory === null
                 ? 'bg-primary-700 text-white shadow-md'
                 : 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-100'
@@ -117,7 +117,7 @@ const Skills = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setSelectedCategory(category.id)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+              className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-medium transition-all duration-300 ${
                 selectedCategory === category.id
                   ? 'bg-primary-700 text-white shadow-md'
                   : 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-100'
@@ -135,7 +135,7 @@ const Skills = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6"
           >
             {filteredSkills.map((skill, index) => {
               const Icon = getIcon(skill.icon)
@@ -147,7 +147,7 @@ const Skills = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
                   whileHover={{ y: -4 }}
-                  className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer"
+                  className="bg-white rounded-xl p-5 sm:p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer"
                 >
                   <div className="flex items-center justify-center mb-4">
                     <div className="w-12 h-12 rounded-lg bg-primary-100 text-primary-700 flex items-center justify-center">
@@ -155,7 +155,7 @@ const Skills = () => {
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-semibold text-gray-900 text-center mb-3">
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 text-center mb-3">
                     {skill.name}
                   </h3>
 
@@ -189,23 +189,23 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="mt-16 bg-gradient-to-br from-primary-800 to-secondary-800 rounded-2xl p-8 text-white"
+          className="mt-14 sm:mt-16 bg-gradient-to-br from-primary-800 to-secondary-800 rounded-2xl p-6 sm:p-8 text-white"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold mb-2">Frontend</div>
+              <div className="text-2xl sm:text-3xl font-bold mb-2">Frontend</div>
               <div className="text-gray-200">
                 React, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS
               </div>
             </div>
             <div>
-              <div className="text-3xl font-bold mb-2">Backend</div>
+              <div className="text-2xl sm:text-3xl font-bold mb-2">Backend</div>
               <div className="text-gray-200">
                 Java, Spring Boot, Python, Node.js, Express, FastAPI
               </div>
             </div>
             <div>
-              <div className="text-3xl font-bold mb-2">DevOps</div>
+              <div className="text-2xl sm:text-3xl font-bold mb-2">DevOps</div>
               <div className="text-gray-200">
                 Docker, Kubernetes, AWS, GitHub Actions, Jenkins
               </div>
