@@ -27,6 +27,7 @@ const Header = () => {
     { name: 'About', to: '/about' },
     { name: 'Skills', to: '/skills' },
     { name: 'Projects', to: '/projects' },
+    { name: 'Articles', to: '/articles' },
     { name: 'Experience', to: '/experience' },
     { name: 'Contact', to: '/contact' }
   ]
@@ -58,7 +59,7 @@ const Header = () => {
             </Link>
           </motion.div>
 
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-6">
             {navItems.map((item) => (
               <motion.div
                 key={item.name}
@@ -78,7 +79,7 @@ const Header = () => {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden xl:flex items-center space-x-4">
             <motion.a
               href="https://github.com/Ogenbertrand"
               target="_blank"
@@ -110,7 +111,7 @@ const Header = () => {
           </div>
 
           <button
-            className="md:hidden text-gray-700 hover:text-primary-700 transition-colors duration-200"
+            className="lg:hidden text-gray-700 hover:text-primary-700 transition-colors duration-200"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -125,7 +126,7 @@ const Header = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200"
+              className="lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-200"
             >
               <nav className="py-4 space-y-2">
                 {navItems.map((item) => (
