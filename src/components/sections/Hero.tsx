@@ -16,27 +16,33 @@ const Hero = () => {
   const MotionLink = motion(Link)
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#f2ecff] via-[#fbf9ff] to-[#f6f1ff]">
+    <section className="min-h-[100svh] flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-secondary-50 via-white to-primary-50 pt-24 pb-12 sm:pb-16">
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          animate={{ y: [0, -18, 0], x: [0, 8, 0], scale: [1, 1.04, 1] }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-65"
-        />
+          animate={{ rotate: 360 }}
+          transition={{ duration: 28, repeat: Infinity, ease: 'linear' }}
+          className="absolute left-1/2 top-1/2 w-0 h-0"
+        >
+          <div className="w-48 h-48 sm:w-64 sm:h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-65 -translate-x-[18rem] sm:-translate-x-[28rem] -translate-y-[9rem] sm:-translate-y-[12rem]" />
+        </motion.div>
         <motion.div
-          animate={{ y: [0, 20, 0], x: [0, -10, 0], scale: [1, 0.96, 1] }}
-          transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
-          className="absolute top-3/4 right-1/4 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-65"
-        />
+          animate={{ rotate: -360 }}
+          transition={{ duration: 34, repeat: Infinity, ease: 'linear' }}
+          className="absolute left-1/2 top-1/2 w-0 h-0"
+        >
+          <div className="w-48 h-48 sm:w-64 sm:h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-65 translate-x-[11rem] sm:translate-x-[18rem] translate-y-[8rem] sm:translate-y-[10rem]" />
+        </motion.div>
         <motion.div
-          animate={{ y: [0, -14, 0], x: [0, 12, 0], scale: [1, 1.03, 1] }}
-          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1.2 }}
-          className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-65"
-        />
+          animate={{ rotate: 360 }}
+          transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
+          className="absolute left-1/2 top-1/2 w-0 h-0"
+        >
+          <div className="w-72 h-72 sm:w-96 sm:h-96 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-60 translate-x-[1rem] sm:translate-x-[2rem] -translate-y-[2rem] sm:-translate-y-[3rem]" />
+        </motion.div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           <div className="text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -44,7 +50,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-6"
             >
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
                 <span className="text-gray-900">Hi, I&apos;m</span>
                 <br />
                 <span className="gradient-text">Bertrand Ogen</span>
@@ -54,7 +60,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-2xl md:text-3xl font-medium text-gray-700"
+                className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-700"
               >
                 Full Stack Software Engineer & DevOps Engineer
               </motion.h2>
@@ -63,7 +69,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="text-lg text-gray-600 max-w-2xl leading-relaxed"
+                className="text-base sm:text-lg text-gray-600 max-w-2xl leading-relaxed"
               >
               A Software and DevOps Engineer who enjoys building systems that are reliable, scalable, and meaningful.
 
@@ -82,7 +88,7 @@ const Hero = () => {
                 to="/projects"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-primary inline-flex items-center justify-center space-x-2"
+                className="btn-primary w-full sm:w-auto inline-flex items-center justify-center space-x-2"
               >
                 <span>View My Work</span>
                 <FaArrowDown size={14} />
@@ -92,7 +98,7 @@ const Hero = () => {
                 to="/contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-secondary inline-flex items-center justify-center space-x-2"
+                className="btn-secondary w-full sm:w-auto inline-flex items-center justify-center space-x-2"
               >
                 <span>Get In Touch</span>
                 <FaEnvelope size={14} />
@@ -103,7 +109,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.0 }}
-              className="flex items-center justify-center lg:justify-start space-x-6 mt-8"
+              className="flex items-center justify-center lg:justify-start space-x-5 sm:space-x-6 mt-8"
             >
               <motion.a
                 href="https://github.com/Ogenbertrand"
@@ -144,10 +150,10 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex justify-center lg:justify-end"
           >
-            <div className="relative">
-              <div className="w-72 h-72 sm:w-80 sm:h-80 rounded-full bg-gradient-to-br from-primary-600 to-secondary-700 p-2">
+            <div className="relative w-fit">
+              <div className="w-60 h-60 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-primary-600 to-secondary-700 p-2">
                 <div className="w-full h-full rounded-full bg-white border-4 border-white shadow-xl flex items-center justify-center">
-                  <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden border-4 border-primary-100 shadow-md">
+                  <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-full overflow-hidden border-4 border-primary-100 shadow-md">
                     <img
                       src={pic}
                       alt="Bertrand Ogen portrait"
@@ -157,30 +163,30 @@ const Hero = () => {
                 </div>
               </div>
 
-              <div className="absolute -top-5 left-2 sm:left-0">
-                <span className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full bg-lime-300 text-gray-900 text-xs sm:text-sm font-semibold shadow-md font-mono">
-                  <FaJava className="w-3.5 h-3.5" />
+              <div className="absolute -top-4 left-4 sm:left-2 lg:left-0">
+                <span className="inline-flex items-center gap-2 px-3 sm:px-4 lg:px-5 py-1.5 sm:py-2 rounded-full bg-emerald-100 text-emerald-900 text-[11px] sm:text-xs lg:text-sm font-semibold shadow-md font-mono whitespace-nowrap">
+                  <FaJava className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                   Java
                 </span>
               </div>
 
-              <div className="absolute top-1/2 -right-10 sm:-right-14 -translate-y-1/2">
-                <span className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full bg-orange-400 text-gray-900 text-xs sm:text-sm font-semibold shadow-md font-mono">
-                  <FaRust className="w-3.5 h-3.5" />
+              <div className="absolute top-1/2 -right-6 sm:-right-10 lg:-right-14 -translate-y-1/2">
+                <span className="inline-flex items-center gap-2 px-3 sm:px-4 lg:px-5 py-1.5 sm:py-2 rounded-full bg-amber-100 text-amber-900 text-[11px] sm:text-xs lg:text-sm font-semibold shadow-md font-mono whitespace-nowrap">
+                  <FaRust className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                   Rust
                 </span>
               </div>
 
-              <div className="absolute -bottom-4 left-0 sm:-left-5">
-                <span className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full bg-sky-400 text-gray-900 text-xs sm:text-sm font-semibold shadow-md font-mono">
-                  <SiTypescript className="w-3.5 h-3.5" />
+              <div className="absolute -bottom-3 left-2 sm:left-0 lg:-left-5">
+                <span className="inline-flex items-center gap-2 px-3 sm:px-4 lg:px-5 py-1.5 sm:py-2 rounded-full bg-sky-100 text-sky-900 text-[11px] sm:text-xs lg:text-sm font-semibold shadow-md font-mono whitespace-nowrap">
+                  <SiTypescript className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                   TypeScript
                 </span>
               </div>
 
-              <div className="absolute bottom-6 -right-5 sm:-right-8">
-                <span className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full bg-violet-300 text-gray-900 text-xs sm:text-sm font-semibold shadow-md font-mono">
-                  <FaPython className="w-3.5 h-3.5" />
+              <div className="absolute bottom-4 -right-3 sm:-right-5 lg:-right-8">
+                <span className="inline-flex items-center gap-2 px-3 sm:px-4 lg:px-5 py-1.5 sm:py-2 rounded-full bg-violet-100 text-violet-900 text-[11px] sm:text-xs lg:text-sm font-semibold shadow-md font-mono whitespace-nowrap">
+                  <FaPython className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                   Python
                 </span>
               </div>
@@ -192,7 +198,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <MotionLink
             to="/about"
