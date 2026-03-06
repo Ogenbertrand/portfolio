@@ -38,12 +38,13 @@ const Footer = () => {
     { name: 'About Me', to: '/about' },
     { name: 'Skills', to: '/skills' },
     { name: 'Projects', to: '/projects' },
+    { name: 'Articles', to: '/articles' },
     { name: 'Experience', to: '/experience' },
     { name: 'Contact', to: '/contact' }
   ]
 
   return (
-    <footer className="bg-white border-t border-gray-200">
+    <footer className="bg-secondary-50 border-t border-gray-200">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4">
@@ -108,11 +109,11 @@ const Footer = () => {
             <p className="text-gray-600 text-sm text-center md:text-left">
               © {currentYear} Bertrand Ogen. All rights reserved.
             </p>
-            <div className="flex items-center space-x-4 text-sm text-gray-600">
+            {/* <div className="flex items-center space-x-4 text-sm text-gray-600">
               <span>Built with React, TypeScript & Tailwind CSS</span>
               <span>•</span>
               <span>Deployed on Vercel</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
