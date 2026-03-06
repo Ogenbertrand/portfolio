@@ -8,9 +8,10 @@
   }
   
   body {
-    @apply font-sans text-gray-700 bg-gray-50;
+    @apply font-sans text-gray-700 bg-secondary-50;
     line-height: 1.6;
     letter-spacing: 0.01em;
+    overflow-x: hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -41,11 +42,11 @@
   }
   
   .btn-primary {
-    @apply bg-primary-700 hover:bg-primary-800 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200;
+    @apply bg-primary-700 hover:bg-primary-800 text-white font-medium text-sm sm:text-base py-2.5 sm:py-3 px-5 sm:px-6 rounded-lg transition-colors duration-200;
   }
   
   .btn-secondary {
-    @apply bg-white border border-primary-200 hover:bg-primary-50 text-primary-800 font-medium py-3 px-6 rounded-lg transition-colors duration-200;
+    @apply bg-white border border-secondary-200 hover:bg-secondary-100 text-primary-800 font-medium text-sm sm:text-base py-2.5 sm:py-3 px-5 sm:px-6 rounded-lg transition-colors duration-200;
   }
   
   .card {
@@ -53,17 +54,17 @@
   }
   
   .section {
-    @apply py-20 md:py-32;
+    @apply py-14 sm:py-16 md:py-24 lg:py-28;
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900;
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-10 md:mb-12 text-gray-900;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-primary-700 to-secondary-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-700 to-accent-500 bg-clip-text text-transparent;
   }
   
   .animate-float {
