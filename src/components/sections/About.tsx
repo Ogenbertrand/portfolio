@@ -44,7 +44,7 @@ const About = () => {
   return (
     <section id="about" className="section bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -59,14 +59,14 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto"
           >
             Passionate Full Stack Software Engineer with expertise in building scalable applications
             and contributing to open-source projects that make a difference.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-start">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -74,8 +74,8 @@ const About = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="bg-gradient-to-br from-gray-100 to-secondary-50 rounded-2xl p-8 border border-gray-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">My Journey</h3>
+            <div className="bg-gradient-to-br from-gray-100 to-secondary-50 rounded-2xl p-6 sm:p-8 border border-gray-200">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">My Journey</h3>
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
                   I&apos;m a passionate Full Stack Software Engineer based in Cameroon, with over 5 years
@@ -104,7 +104,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}
@@ -112,10 +112,10 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white rounded-xl p-6 text-center border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300"
+                  className="bg-white rounded-xl p-5 sm:p-6 text-center border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300"
                 >
                   <div className="flex items-center justify-center mb-3">
-                    <stat.icon className="w-7 h-7 text-primary-700" />
+                    <stat.icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary-700" />
                   </div>
                   <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
                   <div className="text-sm text-gray-600">{stat.label}</div>
@@ -131,7 +131,7 @@ const About = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Key Achievements</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6">Key Achievements</h3>
 
             {achievements.map((achievement, index) => (
               <motion.div
@@ -140,9 +140,9 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex items-start space-x-4 p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300"
+                className="flex items-start space-x-3 sm:space-x-4 p-5 sm:p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary-100 text-primary-700 flex items-center justify-center">
+                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary-100 text-primary-700 flex items-center justify-center">
                   <achievement.icon className="w-5 h-5" />
                 </div>
                 <div>
@@ -161,10 +161,10 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-gray-900 to-secondary-900 rounded-2xl p-8 text-white"
+              className="bg-gradient-to-br from-gray-900 to-secondary-900 rounded-2xl p-6 sm:p-8 text-white"
             >
               <h4 className="text-xl font-bold mb-4">My Philosophy</h4>
-              <blockquote className="text-lg italic leading-relaxed text-gray-100">
+              <blockquote className="text-base sm:text-lg italic leading-relaxed text-gray-100">
                 &quot;Great software is not just about writing code, it&apos;s about solving real problems,
                 building sustainable solutions, and continuously learning and improving. I believe
                 in the power of collaboration, open-source principles, and staying curious about
