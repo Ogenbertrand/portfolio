@@ -42,7 +42,7 @@ const Projects = () => {
   return (
     <section id="projects" className="section bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -57,7 +57,7 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto"
           >
             A showcase of my recent work, including open-source contributions and personal projects
           </motion.p>
@@ -68,7 +68,7 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-10 sm:mb-12"
         >
           {categories.map((category) => (
             <motion.button
@@ -76,7 +76,7 @@ const Projects = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setSelectedCategory(category.id)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+              className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-medium transition-all duration-300 ${
                 selectedCategory === category.id || (selectedCategory === null && category.id === 'all')
                   ? 'bg-primary-700 text-white shadow-md'
                   : 'bg-gray-100 border border-gray-300 text-gray-700 hover:bg-gray-200'
@@ -94,7 +94,7 @@ const Projects = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8"
           >
             {filteredProjects.map((project, index) => {
               const CategoryIcon = getCategoryIcon(project.category)
@@ -108,14 +108,14 @@ const Projects = () => {
                   whileHover={{ y: -5 }}
                   className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
                 >
-                  <div className="p-6">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex items-center space-x-3">
+                  <div className="p-5 sm:p-6">
+                    <div className="flex items-start justify-between gap-3 mb-4">
+                      <div className="flex items-center space-x-3 min-w-0">
                         <div className="w-10 h-10 rounded-lg bg-primary-100 text-primary-700 flex items-center justify-center">
                           <CategoryIcon size={16} />
                         </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-gray-900">
+                        <div className="min-w-0">
+                          <h3 className="text-lg sm:text-xl font-bold text-gray-900 break-words">
                             {project.title}
                           </h3>
                           <span className="inline-block px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full mt-1 capitalize">
@@ -131,7 +131,7 @@ const Projects = () => {
                       )}
                     </div>
 
-                    <p className="text-gray-600 mb-6 leading-relaxed">
+                    <p className="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed">
                       {project.description}
                     </p>
 
@@ -140,21 +140,21 @@ const Projects = () => {
                         {project.technologies.slice(0, 4).map((tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1 bg-primary-100 text-primary-800 text-sm rounded-full"
+                            className="px-3 py-1 bg-primary-100 text-primary-800 text-xs sm:text-sm rounded-full"
                           >
                             {tech}
                           </span>
                         ))}
                         {project.technologies.length > 4 && (
-                          <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full">
+                          <span className="px-3 py-1 bg-gray-100 text-gray-600 text-xs sm:text-sm rounded-full">
                             +{project.technologies.length - 4} more
                           </span>
                         )}
                       </div>
                     </div>
 
-                    <div className="flex items-center justify-between">
-                      <div className="flex space-x-4">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                      <div className="flex items-center flex-wrap gap-x-4 gap-y-2">
                         <motion.a
                           href={project.githubUrl}
                           target="_blank"
@@ -184,7 +184,7 @@ const Projects = () => {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => setSelectedProject(project.id)}
-                        className="text-primary-700 hover:text-primary-800 text-sm font-medium transition-colors duration-200"
+                        className="text-primary-700 hover:text-primary-800 text-sm font-medium transition-colors duration-200 self-start sm:self-auto"
                       >
                         View Details
                       </motion.button>
@@ -201,27 +201,27 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="mt-16 bg-gradient-to-br from-gray-900 to-secondary-900 rounded-2xl p-8 text-white"
+          className="mt-14 sm:mt-16 bg-gradient-to-br from-gray-900 to-secondary-900 rounded-2xl p-6 sm:p-8 text-white"
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold mb-2">{projects.length}</div>
+              <div className="text-2xl sm:text-3xl font-bold mb-2">{projects.length}</div>
               <div className="text-gray-300">Total Projects</div>
             </div>
             <div>
-              <div className="text-3xl font-bold mb-2">
+              <div className="text-2xl sm:text-3xl font-bold mb-2">
                 {projects.filter(p => p.category === 'web').length}
               </div>
               <div className="text-gray-300">Web Apps</div>
             </div>
             <div>
-              <div className="text-3xl font-bold mb-2">
+              <div className="text-2xl sm:text-3xl font-bold mb-2">
                 {projects.filter(p => p.category === 'backend').length}
               </div>
               <div className="text-gray-300">Backend APIs</div>
             </div>
             <div>
-              <div className="text-3xl font-bold mb-2">
+              <div className="text-2xl sm:text-3xl font-bold mb-2">
                 {projects.filter(p => p.featured).length}
               </div>
               <div className="text-gray-300">Featured</div>
@@ -252,13 +252,13 @@ const Projects = () => {
                 if (!project) return null
 
                 return (
-                  <div className="p-8">
-                    <div className="flex items-start justify-between mb-6">
+                  <div className="p-5 sm:p-8">
+                    <div className="flex items-start justify-between gap-4 mb-6">
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
                           {project.title}
                         </h3>
-                        <div className="flex items-center space-x-4">
+                        <div className="flex flex-wrap items-center gap-3">
                           <span className="inline-block px-3 py-1 bg-primary-100 text-primary-800 text-sm rounded-full capitalize">
                             {project.category}
                           </span>
@@ -304,13 +304,13 @@ const Projects = () => {
                         </div>
                       </div>
 
-                      <div className="flex space-x-4">
+                      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                         <motion.a
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.05 }}
-                          className="flex items-center space-x-2 bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors duration-200"
+                          className="flex items-center justify-center space-x-2 bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors duration-200"
                         >
                           <FaGithub className="w-5 h-5" />
                           <span>View Code</span>
@@ -322,7 +322,7 @@ const Projects = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.05 }}
-                            className="flex items-center space-x-2 bg-primary-700 text-white px-6 py-3 rounded-lg hover:bg-primary-800 transition-colors duration-200"
+                            className="flex items-center justify-center space-x-2 bg-primary-700 text-white px-6 py-3 rounded-lg hover:bg-primary-800 transition-colors duration-200"
                           >
                             <FaExternalLinkAlt className="w-4 h-4" />
                             <span>Live Demo</span>
