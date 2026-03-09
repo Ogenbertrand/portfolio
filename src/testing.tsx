@@ -1,0 +1,124 @@
+import { motion } from 'framer-motion'
+import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import logo from '../../assets/logo.png'
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear()
+
+  const socialLinks = [
+    {
+      name: 'GitHub',
+      url: 'https://github.com/Ogenbertrand',
+      icon: FaGithub,
+      color: 'hover:text-gray-900'
+    },
+    {
+      name: 'LinkedIn',
+      url: 'https://linkedin.com/in/bertrand-ogen-2a9108264',
+      icon: FaLinkedin,
+      color: 'hover:text-primary-700'
+    },
+    {
+      name: 'Twitter',
+      url: 'https://twitter.com/ogenbertrand',
+      icon: FaTwitter,
+      color: 'hover:text-accent-600'
+    },
+    {
+      name: 'Email',
+      url: 'mailto:ogenbertrand@gmail.com',
+      icon: FaEnvelope,
+      color: 'hover:text-accent-700'
+    }
+  ]
+
+  const quickLinks = [
+    { name: 'Home', to: '/' },
+    { name: 'About Me', to: '/about' },
+    { name: 'Skills', to: '/skills' },
+    { name: 'Projects', to: '/projects' },
+    { name: 'Articles', to: '/articles' },
+    { name: 'Experience', to: '/experience' },
+    { name: 'Contact', to: '/contact' }
+  ]
+
+  return (
+    <footer className="bg-secondary-50 border-t border-gray-200">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="space-y-4">
+            <div className="flex items-center space-x-2">
+              <img
+                src={logo}
+                alt="Bertrand Ogen logo"
+                className="w-9 h-9 rounded-lg object-cover border border-gray-200 shadow-sm"
+              />
+              <span className="font-display font-semibold text-gray-900">
+                Bertrand Ogen
+              </span>
+            </div>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Full Stack Software Engineer & DevOps Engineer specializing in modern web technologies,
+              cloud infrastructure, and open-source development.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="font-display font-semibold text-gray-900">Quick Links</h3>
+            <ul className="space-y-2">
+              {quickLinks.map((link) => (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    className="text-gray-600 hover:text-primary-700 text-sm transition-colors duration-200"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="font-display font-semibold text-gray-900">Connect</h3>
+            <div className="flex space-x-4">
+              {socialLinks.map((link) => (
+                <motion.a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -2 }}
+                  className={`text-gray-600 ${link.color} transition-colors duration-200`}
+                  aria-label={link.name}
+                >
+                  <link.icon size={18} />
+                </motion.a>
+              ))}
+            </div>
+            <div className="text-sm text-gray-600">
+              <p>Location: Cameroon</p>
+              <p>Email: ogenbertrand@gmail.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-200 mt-8 pt-8">
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+            <p className="text-gray-600 text-sm text-center md:text-left">
+              © {currentYear} Bertrand Ogen. All rights reserved.
+            </p>
+            {/* <div className="flex items-center space-x-4 text-sm text-gray-600">
+              <span>Built with React, TypeScript & Tailwind CSS</span>
+              <span>•</span>
+              <span>Deployed on Vercel</span>
+            </div> */}
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
+
+export default Footer
